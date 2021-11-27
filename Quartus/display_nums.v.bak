@@ -1,0 +1,42 @@
+module display_nums
+(input clk,
+ output [7:0] display,
+ output [7:0] segment);
+
+ 
+	parameter zero  = 8'b00111111;
+	parameter one   = 8'b00000110;
+	parameter two   = 8'b01011011;
+	parameter three = 8'b01001111;
+	parameter four  = 8'b01100110;
+	parameter five  = 8'b01101101;
+	parameter six   = 8'b01111101;
+	parameter seven = 8'b00100111;
+	parameter eight = 8'b01111111;
+	parameter nine  = 8'b01101111;
+
+	wire [7:0] numbers [7:0];
+
+	numbers[0] = 8'b00111111;
+	numbers[1] = 8'b00000110;
+	numbers[2] = 8'b01011011;
+	numbers[3] = 8'b01001111;
+	numbers[4] = 8'b01100110;
+	numbers[5] = 8'b01101101;
+	numbers[6] = 8'b01111101;
+	numbers[7] = 8'b00100111;
+	numbers[8] = 8'b01111111;
+	numbers[9] = 8'b01101111;
+
+
+	integer counter = 0;
+	always @(posedge clk) begin
+		display[counter] = ~(8'b1 << counter);
+		segment = numbers[counter];
+		if(counter == 7) counter = 0;
+		else counter = counter + 1;
+
+	end
+
+
+endmodule

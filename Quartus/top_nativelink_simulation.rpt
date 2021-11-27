@@ -1,0 +1,21 @@
+Info: Start Nativelink Simulation process
+
+========= EDA Simulation Settings =====================
+
+Sim Mode              :  Gate
+Family                :  cycloneive
+Quartus root          :  f:/software/quartus/quartus/bin64/
+Quartus sim root      :  f:/software/quartus/quartus/eda/sim_lib
+Simulation Tool       :  questa intel fpga
+Simulation Language   :  verilog
+Simulation Mode       :  GUI
+Sim Output File       :  top.vo
+Sim SDF file          :  top__verilog.sdo
+Sim dir               :  simulation\modelsim
+
+=======================================================
+
+Info: Starting NativeLink simulation with Questa Intel FPGA software
+Sourced NativeLink script f:/software/quartus/quartus/common/tcl/internal/nativelink/modelsim.tcl
+Info: Spawning Questa Intel FPGA Simulation software 
+Info: NativeLink simulation flow was successful

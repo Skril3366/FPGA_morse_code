@@ -1,0 +1,37 @@
+module display
+#(parameter zero  = 8'b00111111,
+	parameter one   = 8'b00000110,
+	parameter two   = 8'b01011011,
+	parameter three = 8'b01001111,
+	parameter four  = 8'b01100110,
+	parameter five  = 8'b01101101,
+	parameter six   = 8'b01111101,
+	parameter seven = 8'b00100111,
+	parameter eight = 8'b01111111,
+	parameter nine  = 8'b01101111)
+(output [7:0] display,
+ output [7:0] segment);
+
+
+	wire [9:0] numbers [7:0];
+
+	numbers[0] = zero  ;
+	numbers[1] = one   ;
+	numbers[2] = two   ;
+	numbers[3] = three ;
+	numbers[4] = four  ;
+	numbers[5] = five  ;
+	numbers[6] = six   ;
+	numbers[7] = seven ;
+	numbers[8] = eight ;
+
+	integer i;
+	for(i = 0; i < 8; i++) begin
+		assign display = (8'b1 << i);
+		#30
+		assign segment = numbers[i];
+	end
+
+
+
+endmodule
